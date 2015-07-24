@@ -2,7 +2,7 @@ package org.elite.mini.service;
 
 import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Transactional;
-import org.xhome.ly.common.QueryBase;
+import org.elite.mini.common.QueryBase;
 
 /**
  * Created by fenjuly

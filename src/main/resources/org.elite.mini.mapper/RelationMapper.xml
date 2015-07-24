@@ -19,7 +19,7 @@
     delete from relation
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="org.elite.mini.bean.Relation" >
+  <insert id="insert" parameterType="org.elite.mini.bean.Relation" useGeneratedKeys="true" keyProperty="id">
     insert into relation (id, student_id1, student_id2
       )
     values (#{id,jdbcType=INTEGER}, #{studentId1,jdbcType=INTEGER}, #{studentId2,jdbcType=INTEGER}

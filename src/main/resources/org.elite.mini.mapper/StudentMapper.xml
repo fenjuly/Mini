@@ -34,7 +34,7 @@
     delete from student
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="org.elite.mini.bean.Student" >
+  <insert id="insert" parameterType="org.elite.mini.bean.Student" useGeneratedKeys="true" keyProperty="id">
     insert into student (id, account, password, 
       name, sex, birthday, 
       admission_date, school, profession, 

@@ -22,7 +22,25 @@ http://www.springframework.org/schema/aop/spring-aop-3.1.xsd
 	<!-- 自动扫描controller包下的所有类，使其认为spring mvc的控制器 -->
 	<context:component-scan base-package="org.elite.mini.action" />
 
-	
+	<!-- 	rick begin -->
+	<!-- 启动对@AspectJ注解的支持 -->
+	<aop:aspectj-autoproxy proxy-target-class="true"/>
+
+	<bean class="org.elite.mini.aspect.ActionIntercepters" name="actionIntercepters">
+	</bean>
+	<bean class="org.elite.mini.common.Response" name="invalidOperationResponse" scope="singleton">
+		<property name="status">
+			<value>13</value>
+		</property>
+	</bean>
+	<bean class="org.elite.mini.common.Response" name="errorResponse" scope="singleton">
+		<property name="status">
+			<value>14</value>
+		</property>
+	</bean>
+
+	<!-- 	rick end -->
+
 	<!-- 避免IE执行AJAX时,返回JSON出现下载文件 -->
 	<bean id="mappingJacksonHttpMessageConverter" class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter">
 		<property name="supportedMediaTypes">

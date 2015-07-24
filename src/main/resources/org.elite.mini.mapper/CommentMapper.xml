@@ -20,7 +20,7 @@
     delete from comment
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="org.elite.mini.bean.Comment" >
+  <insert id="insert" parameterType="org.elite.mini.bean.Comment" useGeneratedKeys="true" keyProperty="id">
     insert into comment (id, microblog_id, detail, 
       student_id)
     values (#{id,jdbcType=INTEGER}, #{microblogId,jdbcType=INTEGER}, #{detail,jdbcType=VARCHAR}, 

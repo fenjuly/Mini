@@ -21,7 +21,7 @@
     delete from microblog
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="org.elite.mini.bean.Microblog" >
+  <insert id="insert" parameterType="org.elite.mini.bean.Microblog" useGeneratedKeys="true" keyProperty="id">
     insert into microblog (id, detail, click, 
       student_id, picture_id)
     values (#{id,jdbcType=INTEGER}, #{detail,jdbcType=VARCHAR}, #{click,jdbcType=INTEGER}, 

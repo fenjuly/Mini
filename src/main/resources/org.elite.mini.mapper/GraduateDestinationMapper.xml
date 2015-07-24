@@ -19,7 +19,7 @@
     delete from graduate_destination
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="org.elite.mini.bean.GraduateDestination" >
+  <insert id="insert" parameterType="org.elite.mini.bean.GraduateDestination" useGeneratedKeys="true" keyProperty="id">
     insert into graduate_destination (id, student_id, destination
       )
     values (#{id,jdbcType=INTEGER}, #{studentId,jdbcType=INTEGER}, #{destination,jdbcType=VARCHAR}

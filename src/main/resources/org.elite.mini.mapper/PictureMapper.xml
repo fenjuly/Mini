@@ -19,7 +19,7 @@
     delete from picture
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="org.elite.mini.bean.Picture" >
+  <insert id="insert" parameterType="org.elite.mini.bean.Picture" useGeneratedKeys="true" keyProperty="id">
     insert into picture (id, url, type
       )
     values (#{id,jdbcType=INTEGER}, #{url,jdbcType=VARCHAR}, #{type,jdbcType=INTEGER}
